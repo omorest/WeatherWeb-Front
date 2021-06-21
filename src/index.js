@@ -1,6 +1,6 @@
-// import * as dotenv from "dotenv";
-// dotenv.config();
 import './style.css';
+// import dotenv from "dotenv";
+// dotenv.config();
 
 const input = document.querySelector('input')
 const container = document.querySelector('.container')
