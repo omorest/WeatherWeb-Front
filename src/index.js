@@ -1,28 +1,30 @@
 import './style.css';
-// import dotenv from "dotenv";
-// dotenv.config();
 
-const input = document.querySelector('input')
-const container = document.querySelector('.container')
-const texto = document.querySelector('.texto')
-console.log(process.env.KEY)
-// const getDataWeather = async (city, country) => {
-// 	const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${process.env.KEY}`
-// 	const res = await fetch(url)
-// 	const data = await res.json()
-// 	console.log(data)
-// }
+const container = document.querySelector('.container');
 
-// getDataWeather('puerto de la cruz', 'spain')
+const getDataWeatherByCity = async (city, country) => {
+	const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${process.env.KEY}`;
+	const res = await fetch(url);
+	const data = await res.json();
+	return data;
+}
 
-input.addEventListener('keydown', (e) => {
-	if (e.key === 'Enter') {
-		const p = document.querySelector('p')
-	  if (p) p.remove();
+const getDataWeatherByLatLon = async (latitude, longitude) => {
+	const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid&units=metric&appid=${process.env.KEY}`;
+	const res = await fetch(url);
+	const data = await res.json();
+	return data;
+}
+
+const iniInformationWeather = () => {
+	async function success(position) {
+		const {latitude, longitude} = position.coords;
+		console.log(latitude, longitude)
+		const dataWeather = await getDataWeatherByLatLon(latitude, longitude)
+		console.log(dataWeather)
+	};
 	
-		const temperature = document.createElement('p')
-		temperature.innerHTML = input.value
-		container.append(temperature)
-		input.value = ''
-	}
-});
+	navigator.geolocation.getCurrentPosition(success);
+}
+
+iniInformationWeather()
