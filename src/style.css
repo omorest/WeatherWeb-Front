@@ -1,11 +1,25 @@
-body, .container{
+body {
   font-family: 'Barlow', sans-serif;
   background-color: #FFE55F;
   color: #4E4E4E;
+}
+
+.container{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+}
+
+.title {
+  align-self: flex-start;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
 .weather-info {
@@ -20,6 +34,7 @@ body, .container{
 }
 
 .city-country {
+  margin-top: 30px;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
