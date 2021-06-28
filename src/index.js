@@ -49,7 +49,6 @@ const createInformationWeather = (weather) => {
 	let description = document.createElement('h3')
 	
 	temperature.classList.add('temperature')
-	
 	city.innerHTML = weather.city;
 	country.innerHTML = weather.country;
 	cityCountry.append(country, city);
