@@ -1,23 +1,9 @@
+import {getDataWeatherByLatLon} from './js/requests'
 import './style.css';
 
-const weatherInfo = document.querySelector('.weather-info')
 const cityCountry = document.querySelector('.city-country')
 const tempIcon = document.querySelector('.temp-icon')
 const descriptionWeather = document.querySelector('.description')
-
-const getDataWeatherByCity = async (city, country) => {
-	const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${process.env.KEY}`;
-	const res = await fetch(url);
-	const data = await res.json();
-	return data;
-}
-
-const getDataWeatherByLatLon = async (latitude, longitude) => {
-	const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${process.env.KEY}`;
-	const res = await fetch(url);
-	const data = await res.json();
-	return data;
-}
 
 const iniInformationWeather = () => {
 	async function success(position) {
