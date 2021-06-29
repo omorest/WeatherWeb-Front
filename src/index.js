@@ -3,6 +3,7 @@ import './style.css';
 
 const cityCountry = document.querySelector('.city-country')
 const tempIcon = document.querySelector('.temp-icon')
+const weatherIconContainer = document.querySelector('.weather')
 const descriptionWeather = document.querySelector('.description')
 
 const iniInformationWeather = () => {
@@ -31,6 +32,7 @@ const createInformationWeather = (weather) => {
 	let city = document.createElement('h2');
 	let country = document.createElement('h3');
 	let temperature = document.createElement('span');
+	let iconTemperature = document.createElement('img')
 	let icon = document.createElement('img')
 	let description = document.createElement('h3')
 	
@@ -39,9 +41,12 @@ const createInformationWeather = (weather) => {
 	country.innerHTML = weather.country;
 	cityCountry.append(country, city);
 	
-	temperature.innerHTML = weather.temperature + 'º';
-	icon.src = 'http://openweathermap.org/img/wn/' + weather.icon + '@2x.png';
-	tempIcon.append(temperature, icon);
+	temperature.innerHTML = weather.temperature;
+	iconTemperature.src = './images/temperature.png';
+	tempIcon.append(temperature, iconTemperature);
+
+	icon.src = './images/' + weather.icon + '.png';
+	weatherIconContainer.append(icon);
 	
 	description.innerHTML = weather.description;
 	descriptionWeather.append(description)

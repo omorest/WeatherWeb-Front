@@ -9,17 +9,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 .title {
   align-self: flex-start;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
 }
 
 .weather-info {
@@ -54,13 +47,28 @@ form {
 
 .temp-icon {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   align-items: center;
   justify-content: space-around;
 }
 
+.temp-icon img {
+
+  width: 25%;
+}
+
 .temperature {
-  font-size: 72px;
+  font-size: 4vmax;
+}
+
+.weather {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.weather img {
+  width: 20%;
 }
 
 .description {
@@ -68,3 +76,4 @@ form {
   flex-direction: column;
   align-items: center;
 }
+
