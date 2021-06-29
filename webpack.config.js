@@ -4,7 +4,7 @@ const Dotenv = require('dotenv-webpack');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: path.join(__dirname, 'src', 'index'),
   output: {
     path: path.resolve(__dirname, 'dist'),
