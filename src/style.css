@@ -4,6 +4,24 @@ body {
   color: #4E4E4E;
 }
 
+body {
+  background: linear-gradient(-45deg, #20fae5, #35daff, #23bad5);
+  background-size: 400% 400%;
+  animation: gradient 30s ease-in-out infinite;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
 .container{
   display: flex;
   flex-direction: column;
@@ -23,7 +41,7 @@ body {
   width: 400px;
   height: 600px;
   border-radius: 10px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.15);
 }
 
 .city-country {
