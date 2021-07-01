@@ -1,4 +1,4 @@
-import {getDataWeatherByLatLon} from './api/requests'
+import {getDataWeatherByLatLon} from './js/api/requests'
 import './style.css';
 
 const weatherInfo = document.querySelector('.weather-info')
@@ -30,7 +30,16 @@ const createInformationWeather = (weather) => {
 			<h3>${weather.description}</h3>
 		</div>
 	</div>
-	<div class="extra-info"></div>
+	<div class="extra-info">
+		<div class="humidity">
+			<img src="./src/images/humidity.png" alt="humidity percent">
+      <p><strong>${weather.humidity} %</strong></p>
+		</div>
+		<div class="wind">
+			<img src="./src/images/wind.png" alt="wind speed">
+      <p><strong>${weather.speedWind} km/h</strong></p>
+		</div>
+	</div>
 	`
 
 	weatherInfo.innerHTML = html;
