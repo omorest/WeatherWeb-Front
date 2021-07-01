@@ -1,4 +1,4 @@
-import {getDataWeatherByLatLon} from './js/requests'
+import {getDataWeatherByLatLon} from './api/requests'
 import './style.css';
 
 const cityCountry = document.querySelector('.city-country')
@@ -8,21 +8,8 @@ const descriptionWeather = document.querySelector('.description')
 
 const iniInformationWeather = () => {
 	async function success(position) {
-		const {latitude, longitude} = position.coords;
-		const dataWeather = await getDataWeatherByLatLon(latitude, longitude);
-		const {main, description, icon} = dataWeather.weather[0];
-		const {temp: temperature, humidity} = dataWeather.main;
-		const {speed} = dataWeather.wind;
-		const {country} = dataWeather.sys;
-		const {name: city} = dataWeather;
-
-		const weatherInfoRelevant = {
-			main, description, icon,
-			temperature, humidity,
-			speed,
-			country, city
-		}
-		createInformationWeather(weatherInfoRelevant);
+		const dataWeather = await getDataWeatherByLatLon(position.coords);
+		createInformationWeather(dataWeather);
 	};
 	
 	navigator.geolocation.getCurrentPosition(success);
@@ -53,3 +40,4 @@ const createInformationWeather = (weather) => {
 }
 
 iniInformationWeather()
+
