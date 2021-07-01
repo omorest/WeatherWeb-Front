@@ -1,14 +1,16 @@
+import { meterPerSecondToKmPerHour } from "../utils";
+
 export function toWeatherInformation(dataWeather) {
 	const { main, description, icon } = dataWeather.weather[0];
 	const { temp: temperature, humidity } = dataWeather.main;
-	const { speed } = dataWeather.wind;
+	const speedWind = meterPerSecondToKmPerHour(dataWeather.wind.speed);
 	const { country } = dataWeather.sys;
 	const { name: city } = dataWeather;
 
 	const weatherInfoRelevant = {
 		main, description, icon,
 		temperature, humidity,
-		speed,
+		speedWind,
 		country, city
 	};
 	return weatherInfoRelevant;
