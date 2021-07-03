@@ -1,7 +1,6 @@
 body {
   font-family: 'Barlow', sans-serif;
   color: #4E4E4E;
-  /* background: linear-gradient(-45deg, #20fae5, #35daff, #23bad5); */
   background: linear-gradient(-45deg, #4eebfc, #35daff, #23bad5);
   background-size: 100vw 100vh;
 }
@@ -13,8 +12,30 @@ body {
   align-items: center;
 }
 
-.title {
-  align-self: flex-start;
+.search {
+  margin-top: 20px;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+}
+
+span.icon {
+  position: absolute;
+  margin-left: 1%;
+}
+
+.input-search {
+  width:400px;
+  height: 40px;
+  border-radius: 10px;
+  text-indent: 8%;
+  color: #4E4E4E;
+  border: none;
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 15%);
+}
+
+.input-search:focus {
+  outline: none;
 }
 
 .weather-info {
@@ -25,7 +46,7 @@ body {
   width: 400px;
   height: 600px;
   border-radius: 10px;
-  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
 }
 
 .city-country {
