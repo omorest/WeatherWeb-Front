@@ -1,7 +1,8 @@
-import {getDataWeatherByLatLon} from './js/api/requests'
+import {getDataWeatherByCity, getDataWeatherByLatLon} from './js/api/requests'
 import './style.css';
 
-const weatherInfo = document.querySelector('.weather-info')
+const weatherInfo = document.querySelector('.weather-info');
+const input = document.querySelector('.input-search')
 
 const iniInformationWeather = () => {
 	async function success(position) {
@@ -44,5 +45,15 @@ const createInformationWeather = (weather) => {
 
 	weatherInfo.innerHTML = html;
 }
+
+input.addEventListener("keyup", async (event) => {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+		const [city, country] = input.value.split(',')
+		const dataWeather = await getDataWeatherByCity(city, country);
+		createInformationWeather(dataWeather);
+		input.value = '';
+  }
+});
 
 iniInformationWeather()
