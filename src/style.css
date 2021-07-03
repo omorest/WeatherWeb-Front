@@ -21,14 +21,14 @@ body {
 
 span.icon {
   position: absolute;
-  margin-left: 1%;
+  margin-left: 10px;
 }
 
 .input-search {
   width:400px;
   height: 40px;
   border-radius: 10px;
-  text-indent: 8%;
+  text-indent: 35px;
   color: #4E4E4E;
   border: none;
   box-shadow: 0px 0px 10px rgb(0 0 0 / 15%);
@@ -80,7 +80,7 @@ span.icon {
 }
 
 .temperature {
-  font-size: 4vmax;
+  font-size: 60px;
 }
 
 .weather {
