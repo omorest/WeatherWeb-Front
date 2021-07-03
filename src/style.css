@@ -1,25 +1,9 @@
 body {
   font-family: 'Barlow', sans-serif;
-  background-color: #FFE55F;
   color: #4E4E4E;
-}
-
-body {
-  background: linear-gradient(-45deg, #20fae5, #35daff, #23bad5);
-  background-size: 400% 400%;
-  animation: gradient 30s ease-in-out infinite;
-}
-
-@keyframes gradient {
-  0% {
-      background-position: 0% 50%;
-  }
-  50% {
-      background-position: 100% 50%;
-  }
-  100% {
-      background-position: 0% 50%;
-  }
+  /* background: linear-gradient(-45deg, #20fae5, #35daff, #23bad5); */
+  background: linear-gradient(-45deg, #4eebfc, #35daff, #23bad5);
+  background-size: 100vw 100vh;
 }
 
 .container{
