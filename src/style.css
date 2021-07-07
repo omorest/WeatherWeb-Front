@@ -1,4 +1,5 @@
 body {
+  margin: 0;
   font-family: 'Lato', sans-serif;
   color: #ffffff;
   background-image: url(./images/sunny.jpg);
@@ -6,6 +7,7 @@ body {
 }
 
 .container{
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,6 +42,7 @@ span.icon {
 
 .weather-info {
   width: 70%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,6 +50,7 @@ span.icon {
 }
 
 .city-country {
+  height: 20%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,20 +65,20 @@ span.icon {
 }
 
 .temperature-info {
+  height: 30%;
   text-align: center;
-  margin-top: 70px;
 }
 
 .temperature {
-  font-size: 70px;
+  font-size: 100px;
 }
 
 .squares-info {
-  margin-top: 100px;
+  height: 50%;
   width: 100%;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
 }
 

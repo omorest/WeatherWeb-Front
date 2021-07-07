@@ -39,41 +39,7 @@ const createInformationWeather = (weather) => {
 			<span><strong>${weather.speedWind} Km/h</strong></span>
 		</div>
 		</div>
-
-		
 		`
-		// 	<div class="humidity">
-		// 		<img src="./src/images/humidity.png" alt="humidity percent">
-		// 		<p><strong>${weather.humidity} %</strong></p>
-		// 	</div>
-		// 	<div class="wind">
-		// 		<img src="./src/images/wind.png" alt="wind speed">
-		// 		<p><strong>${weather.speedWind} km/h</strong></p>
-		// 	</div>
-		//`
-
-	// const html = `
-	// 	<div class="city-country">
-	// 		<h3>${weather.country}</h3>
-	// 		<h2>${weather.city}</h2>
-	// 	</div>
-	// 	<div class="temp-icon-desc">
-	// 		<div class="temp-icon">
-	// 			<span class="temperature">${weather.temperature}</span>
-	// 		</div>
-	// 		<div class="weather">
-	// 			<img src=\"./images/${weather.icon}.png\">
-	// 			<h3>${weather.description}</h3>
-	// 	</div>
-	// 		<div class="humidity">
-	// 			<img src="./src/images/humidity.png" alt="humidity percent">
-	// 			<p><strong>${weather.humidity} %</strong></p>
-	// 		</div>
-	// 		<div class="wind">
-	// 			<img src="./src/images/wind.png" alt="wind speed">
-	// 			<p><strong>${weather.speedWind} km/h</strong></p>
-	// 		</div>
-	// 	`
 
 	weatherInfo.innerHTML = html;
 }
