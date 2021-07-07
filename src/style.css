@@ -23,7 +23,7 @@ body {
   align-items: center;
 }
 
-span.icon {
+.icon {
   position: absolute;
   margin-left: 10px;
 }
@@ -35,7 +35,7 @@ span.icon {
   text-indent: 35px;
   color: #4E4E4E;
   border: none;
-  box-shadow: 0px 0px 10px rgb(0 0 0 / 15%);
+  box-shadow: 0px 0px 10px rgb(0 0 0 0.15);
 }
 
 .input-search:focus {
@@ -88,7 +88,7 @@ span.icon {
   width: 200px;
   height: 200px;
   background-color: white;
-  box-shadow: 0px 0px 10px rgb(0 0 0 / 15%);
+  box-shadow: 0px 0px 10px rgb(0 0 0 0.15);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
