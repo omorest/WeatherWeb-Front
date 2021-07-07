@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: 'Lato', sans-serif;
   color: #ffffff;
-  background-image: url(./images/background/fog.jpg);
+  background-image: url(./images/background/clear-night.jpg);
   background-size: cover;
   background-attachment: fixed;
 }
@@ -36,7 +36,8 @@ body {
   text-indent: 35px;
   color: #4E4E4E;
   border: none;
-  box-shadow: 0px 0px 10px rgb(0 0 0 0.15);
+  /* box-shadow: 0px 0px 5px rgb(174 174 174 / 23%) */
+
 }
 
 .input-search:focus {
@@ -70,6 +71,9 @@ body {
 .temperature-info {
   height: 30%;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .temperature {
@@ -77,11 +81,11 @@ body {
 }
 
 .squares-info {
-  height: 50%;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -89,7 +93,7 @@ body {
   width: 200px;
   height: 200px;
   background-color: white;
-  box-shadow: 0px 0px 10px rgb(0 0 0 0.15);
+  /* box-shadow: 0px 0px 10px rgb(125, 125, 125); */
   border-radius: 10px;
   display: flex;
   flex-direction: column;
