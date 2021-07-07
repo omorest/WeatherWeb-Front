@@ -25,20 +25,20 @@ const createInformationWeather = (weather) => {
 		</div>
 		
 		<div class="squares-info">
-		<div class="square humidity">
-			<span><strong>Humidity</strong></span>
-			<img src="./images/humidity.png" alt="humidity percent">
-			<span><strong>${weather.humidity} %</strong></span>
-			</div>	
-			<div class="square weather">
-				<img src=\"./images/${weather.icon}.png\">
-				<span><strong>${weather.description}</strong></span>
+			<div class="square humidity">
+				<span><strong>Humidity</strong></span>
+				<img src="./images/humidity.png" alt="humidity percent">
+				<span><strong>${weather.humidity} %</strong></span>
+				</div>	
+				<div class="square weather">
+					<img src=\"./images/${weather.icon}.png\">
+					<span><strong>${weather.description}</strong></span>
+				</div>
+			<div class="square wind">
+				<span><strong>Wind Speed</strong></span>
+				<img src="./images/wind.png" alt="wind speed">
+				<span><strong>${weather.speedWind} Km/h</strong></span>
 			</div>
-		<div class="square wind">
-			<span><strong>Wind Speed</strong></span>
-			<img src="./images/wind.png" alt="wind speed">
-			<span><strong>${weather.speedWind} Km/h</strong></span>
-		</div>
 		</div>
 		`
 
