@@ -27,7 +27,7 @@ const createInformationWeather = (weather) => {
 		<div class="squares-info">
 		<div class="square humidity">
 			<span><strong>Humidity</strong></span>
-			<img src="./src/images/humidity.png" alt="humidity percent">
+			<img src="./images/humidity.png" alt="humidity percent">
 			<span><strong>${weather.humidity} %</strong></span>
 			</div>	
 			<div class="square weather">
@@ -36,7 +36,7 @@ const createInformationWeather = (weather) => {
 			</div>
 		<div class="square wind">
 			<span><strong>Wind Speed</strong></span>
-			<img src="./src/images/wind.png" alt="wind speed">
+			<img src="./images/wind.png" alt="wind speed">
 			<span><strong>${weather.speedWind} Km/h</strong></span>
 		</div>
 		</div>
