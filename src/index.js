@@ -7,6 +7,7 @@ const input = document.querySelector('.input-search')
 const iniInformationWeather = () => {
 	async function success(position) {
 		const dataWeather = await getDataWeatherByLatLon(position.coords);
+		input.placeholder = `${dataWeather.city},${dataWeather.country}`
 		createInformationWeather(dataWeather);
 	};
 	
