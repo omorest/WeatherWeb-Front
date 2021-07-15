@@ -4,14 +4,30 @@ import './style.css';
 const weatherInfo = document.querySelector('.weather-info');
 const input = document.querySelector('.input-search')
 
-const iniInformationWeather = () => {
-	async function success(position) {
-		const dataWeather = await getDataWeatherByLatLon(position.coords);
-		input.placeholder = `${dataWeather.city},${dataWeather.country}`
-		createInformationWeather(dataWeather);
-	};
+// const iniInformationWeather = () => {
+// 	async function success(position) {
+// 		const dataWeather = await getDataWeatherByLatLon(position.coords);
+// 		console.log(dataWeather)
+// 		input.placeholder = `${dataWeather.city},${dataWeather.country}`
+// 		createInformationWeather(dataWeather);
+// 	};
 	
-	navigator.geolocation.getCurrentPosition(success);
+// 	navigator.geolocation.getCurrentPosition(success);
+// }
+
+const iniInformationWeather = () => {
+ 	async function success(position) {
+		const {latitude, longitude} = position.coords;
+		console.log({latitude, longitude});
+  	// const res = await fetch(`http://localhost:5000/${28.4039821}/${16.5466336}`)
+  	const res = await fetch(`http://localhost:5000/28.4039821/16.5466336`)
+		const dataWeather = await res.json()
+		console.log(dataWeather)
+  	input.placeholder = `${dataWeather.city},${dataWeather.country}`
+  	createInformationWeather(dataWeather);
+ };
+ 
+ navigator.geolocation.getCurrentPosition(success);
 }
 
 const createInformationWeather = (weather) => {
@@ -49,7 +65,8 @@ input.addEventListener("keyup", async (event) => {
   if (event.keyCode === 13) {
     event.preventDefault();
 		const [city, country] = input.value.split(',')
-		const dataWeather = await getDataWeatherByCity(city, country);
+		const res = await fetch(`http://localhost:5000/${city}/${country}`);
+		const dataWeather = await res.json();
 		createInformationWeather(dataWeather);
 		input.value = '';
   }
