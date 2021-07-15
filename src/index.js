@@ -1,28 +1,13 @@
-import {getDataWeatherByCity, getDataWeatherByLatLon} from './js/api/requests'
 import './style.css';
 
 const weatherInfo = document.querySelector('.weather-info');
 const input = document.querySelector('.input-search')
 
-// const iniInformationWeather = () => {
-// 	async function success(position) {
-// 		const dataWeather = await getDataWeatherByLatLon(position.coords);
-// 		console.log(dataWeather)
-// 		input.placeholder = `${dataWeather.city},${dataWeather.country}`
-// 		createInformationWeather(dataWeather);
-// 	};
-	
-// 	navigator.geolocation.getCurrentPosition(success);
-// }
-
 const iniInformationWeather = () => {
  	async function success(position) {
 		const {latitude, longitude} = position.coords;
-		console.log({latitude, longitude});
-  	// const res = await fetch(`http://localhost:5000/${28.4039821}/${16.5466336}`)
-  	const res = await fetch(`http://localhost:5000/28.4039821/16.5466336`)
+  	const res = await fetch(`http://localhost:5000/api/coords/${latitude}/${longitude}`)
 		const dataWeather = await res.json()
-		console.log(dataWeather)
   	input.placeholder = `${dataWeather.city},${dataWeather.country}`
   	createInformationWeather(dataWeather);
  };
@@ -65,7 +50,7 @@ input.addEventListener("keyup", async (event) => {
   if (event.keyCode === 13) {
     event.preventDefault();
 		const [city, country] = input.value.split(',')
-		const res = await fetch(`http://localhost:5000/${city}/${country}`);
+		const res = await fetch(`http://localhost:5000/api/location/${city}/${country}`);
 		const dataWeather = await res.json();
 		createInformationWeather(dataWeather);
 		input.value = '';
