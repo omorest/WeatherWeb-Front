@@ -91,7 +91,7 @@ typings/
 # public
 
 # vuepress build output
-dist/
+# dist/
 .vuepress/dist
 
 # Serverless directories

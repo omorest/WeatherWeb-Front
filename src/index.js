@@ -6,7 +6,7 @@ const input = document.querySelector('.input-search')
 const iniInformationWeather = () => {
  	async function success(position) {
 		const {latitude, longitude} = position.coords;
-  	const res = await fetch(`http://localhost:5000/api/coords/${latitude}/${longitude}`)
+  	const res = await fetch(`https://weatherweb-backend.herokuapp.com/api/coords/${latitude}/${longitude}`)
 		const dataWeather = await res.json()
   	input.placeholder = `${dataWeather.city},${dataWeather.country}`
   	createInformationWeather(dataWeather);
@@ -50,7 +50,7 @@ input.addEventListener("keyup", async (event) => {
   if (event.keyCode === 13) {
     event.preventDefault();
 		const [city, country] = input.value.split(',')
-		const res = await fetch(`http://localhost:5000/api/location/${city}/${country}`);
+		const res = await fetch(`https://weatherweb-backend.herokuapp.com/api/location/${city}/${country}`);
 		const dataWeather = await res.json();
 		createInformationWeather(dataWeather);
 		input.value = '';
