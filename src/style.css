@@ -17,6 +17,13 @@ body {
 
 .search {
   height: 30vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
   display: flex;
   align-items: center;
 }
@@ -100,4 +107,11 @@ body {
 }
 .square img{
   width: 50%;
+}
+
+
+@media screen and (max-width: 500px) {
+  .input {
+    width: 90%;
+  }
 }
