@@ -114,4 +114,8 @@ body {
   .input {
     width: 90%;
   }
+
+  .temperature {
+    font-size: 70px;
+}
 }
