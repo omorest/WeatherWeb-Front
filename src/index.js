@@ -1,12 +1,15 @@
 import './style.css';
 
 const weatherInfo = document.querySelector('.weather-info');
-const input = document.querySelector('.input-search')
+const input = document.querySelector('.input-search');
+const urlServer = 'https://weatherweb-backend.herokuapp.com/api';
+const localHost = 'http://localhost:5000/api';
 
 const iniInformationWeather = () => {
  	async function success(position) {
 		const {latitude, longitude} = position.coords;
-  	const res = await fetch(`https://weatherweb-backend.herokuapp.com/api/coords/${latitude}/${longitude}`)
+  	// const res = await fetch(urlServer + `/coords/${latitude}/${longitude}`)
+  	const res = await fetch(localHost + `/coords/${latitude}/${longitude}`)
 		const dataWeather = await res.json()
   	input.placeholder = `${dataWeather.city},${dataWeather.country}`
   	createInformationWeather(dataWeather);
@@ -50,7 +53,8 @@ input.addEventListener("keyup", async (event) => {
   if (event.keyCode === 13) {
     event.preventDefault();
 		const [city, country] = input.value.split(',')
-		const res = await fetch(`https://weatherweb-backend.herokuapp.com/api/location/${city}/${country}`);
+		// const res = await fetch(urlServer + `/location/${city}/${country}`);
+		const res = await fetch(localHost + `/location/${city}/${country}`);
 		const dataWeather = await res.json();
 		createInformationWeather(dataWeather);
 		input.value = '';
