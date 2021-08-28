@@ -2,7 +2,6 @@ body {
   margin: 0;
   font-family: 'Lato', sans-serif;
   color: #ffffff;
-  background-image: url(./images/background/sunny.jpg);
   background-size: cover;
   background-attachment: fixed;
 }

@@ -17,6 +17,7 @@ const iniInformationWeather = () => {
 }
 
 const createInformationWeather = (weather) => {
+	document.body.style.backgroundImage = `url('./images/background/${weather.icon}-back.jpg')`
 	const html = `
 		<div class="city-country">
 			<span class="city">${weather.city}</span>
@@ -29,16 +30,16 @@ const createInformationWeather = (weather) => {
 		<div class="squares-info">
 			<div class="square humidity">
 				<span><strong>Humidity</strong></span>
-				<img src="./images/humidity.png" alt="humidity percent">
+				<img src="./images/icons/humidity.png" alt="humidity percent">
 				<span><strong>${weather.humidity} %</strong></span>
 				</div>	
 				<div class="square weather">
-					<img src=\"./images/${weather.icon}.png\">
+					<img src=\"./images/icons/${weather.icon}.png\">
 					<span><strong>${weather.description}</strong></span>
 				</div>
 			<div class="square wind">
 				<span><strong>Wind Speed</strong></span>
-				<img src="./images/wind.png" alt="wind speed">
+				<img src="./images/icons/wind.png" alt="wind speed">
 				<span><strong>${weather.speedWind} Km/h</strong></span>
 			</div>
 		</div>
